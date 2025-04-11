@@ -14,7 +14,7 @@ public class Game {
 
     public void start() {
         while (true) {
-
+            board.printBoard();
             Player player = players[currentPlayer];
             System.out.println(player.getName() + " (" + player.getToken().getSymbol() + "), elige una columna (0-6):");
 
@@ -22,7 +22,7 @@ public class Game {
 
             if (board.dropToken(column, player.getToken().getSymbol())) {
                 if (board.checkWin(player.getToken().getSymbol())) {
-
+                    board.printBoard();
                     System.out.println("¡" + player.getName() + " ha ganado!");
                     break;
                 }
